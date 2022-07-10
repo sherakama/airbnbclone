@@ -5,7 +5,7 @@
  **/
 const nextConfig = {
   images: {
-    domains: ['a0.muscache.com', 'placeimg.com'],
+    domains: ['a0.muscache.com', 'placeimg.com', 'picsum.photos', 'i.picsum.photos'],
   },
   reactStrictMode: true,
   eslint: {

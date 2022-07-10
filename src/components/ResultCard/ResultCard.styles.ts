@@ -1,7 +1,7 @@
 export const ResultCardStyles: {
   [key: string]: string[]
 } = {
-  root: [''],
+  root: ['overflow-hidden'],
   img: ['rounded-xl'],
   heart: [''],
   loca: [''],

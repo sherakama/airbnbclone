@@ -1,23 +1,53 @@
 import { Container } from '../Container';
-import Image, { ImageLoaderProps } from 'next/image';
 import Link from 'next/link';
 import { ResultCardStyles as styles } from './ResultCard.styles';
 import { dcnb } from 'cnbuilder';
 import { Heading } from '../Heading';
+import { Carousel } from '../Carousel';
+import { useCallback, useEffect, useState } from 'react';
+import { PulseLoader } from 'react-spinners';
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 interface ResultCardInterface {
   className?: string;
 }
 
-const placeLoader = ({ src }: ImageLoaderProps) => {
-  return `${src}?cachebust=${Math.floor(Math.random() * 10000000)}`
-}
-
 export const ResultCard = ({ className }: ResultCardInterface) => {
+
+  const [data, setData] = useState(null);
+  const [isLoading, setLoading] = useState(true);
+  const tripId = Math.floor(Math.random() * 1000) + 1;
+
+  const fetchData = useCallback(async (tripId: number) => {
+    const res = await fetch(`http://localhost:3000/api/trips/media/images/${tripId}`);
+    const data = await res.json();
+    setData(data.items);
+    setTimeout(() => { setLoading(false) }, tripId);
+  }, []);
+
+  useEffect(() => {
+    fetchData(tripId);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div>
+        <PulseLoader />
+        <Skeleton count={5} />
+      </div>
+    )
+  }
+
+  if (!data) {
+    return (
+      <p>Error</p>
+    )
+  }
 
   return (
     <Container as="div" center className={dcnb(styles.root, className)}>
-      <Image src="https://placeimg.com/720/480/arch" blurDataURL="https://placeimg.com/10/10/arch" placeholder="blur" height={480} width={480} alt="Place Image" loader={placeLoader} className={dcnb(styles.img)} />
+      <Carousel images={data} />
       <button>♡</button>
       <Link href={''}>
         <a>
@@ -30,4 +60,3 @@ export const ResultCard = ({ className }: ResultCardInterface) => {
     </Container>
   )
 }
-
