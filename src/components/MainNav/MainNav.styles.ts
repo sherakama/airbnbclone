@@ -1,7 +1,7 @@
 export const MainNavStyles: {
   [key: string]: string[]
 } = {
-  root: ['overflow-hidden'],
-  list: ['flex', 'gap-x-8'],
+  root: ['px-6 py-6'],
+  list: ['flex', 'gap-x-8', 'overflow-hidden'],
   item: [''],
 }

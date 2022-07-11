@@ -9,17 +9,19 @@ interface MainNavProps {
   navData: { items: { title: string, icon: string }[], meta: { direction: string, lang: string } }
 }
 
-export const MainNav = ({ navData }: MainNavProps) => {
+export const MainNav = ({ navData, className }: MainNavProps) => {
 
   const navItems = navData.items.map((item: { title: string, icon: string }) => {
     return <NavItem key={slugify(item.title)} title={item.title} icon={item.icon} />
   });
 
   return (
-    <Container center as="nav" className={dcnb(styles.root)}>
-      <ul className={dcnb(styles.list)}>
-        {navItems}
-      </ul>
-    </Container>
+    <div className={dcnb(styles.root, className)}>
+      <Container center as="nav" className={dcnb(styles.nav, className)}>
+        <ul className={dcnb(styles.list)}>
+          {navItems}
+        </ul>
+      </Container>
+    </div >
   );
 }

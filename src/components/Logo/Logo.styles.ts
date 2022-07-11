@@ -1,6 +1,6 @@
 export const LogoStyles: {
   [key: string]: string[]
 } = {
-  root: ['one', 'two', 'three'],
-  logo: ['this', 'that'],
+  root: ['text-airbnb-100'],
+  logo: [''],
 }

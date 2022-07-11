@@ -1,4 +1,4 @@
-import React, { ReactNode, HTMLAttributes } from "react";
+import React, { ReactNode, HTMLAttributes } from 'react';
 import { dcnb, ClassValue } from 'cnbuilder';
 import { GapClasses, GapClassesType, ColumnClasses, ColumnClassesType, ColumnElements } from './Columns.styles';
 

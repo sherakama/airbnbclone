@@ -12,11 +12,11 @@ export default function Home() {
   return (
     <>
       <header className="mb-8">
-        <Masthead />
-        <MainNav navData={navItems} />
+        <Masthead className="" />
+        <MainNav navData={navItems} className="" />
       </header>
 
-      <main>
+      <main className="px-6">
         <Container center>
           <Grid sm={2} md={3} lg={4} xl={5} gap={6}>
             <ResultCard />
@@ -43,9 +43,10 @@ export default function Home() {
         </Container>
       </main>
 
-      <footer className="bg-slate-100 my-12">
-        <LocalFooter className="bg-slate-100" />
-        <GlobalFooter sticky />
+      <footer className="bg-slate-100 mt-12 px-6">
+        <LocalFooter />
+        <hr className="h-[2px] mx-[-26px]" />
+        <GlobalFooter />
       </footer>
     </>
   )
