@@ -20,7 +20,7 @@ export const ResultCard = ({ className }: ResultCardInterface) => {
   const tripId = Math.floor(Math.random() * 1000) + 1;
 
   const fetchData = useCallback(async (tripId: number) => {
-    const res = await fetch(`http://localhost:3000/api/trips/media/images/${tripId}`);
+    const res = await fetch(`/api/trips/media/images/${tripId}`);
     const data = await res.json();
     setData(data.items);
     setTimeout(() => { setLoading(false) }, tripId);
