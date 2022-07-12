@@ -1,5 +1,6 @@
 export const UserUtilityNavStyles: {
   [key: string]: string[]
 } = {
-  root: [''],
+  root: ['pl-4'],
+  container: ['flex justify-end items-center'],
 }

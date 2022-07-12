@@ -2,8 +2,9 @@ import React from 'react';
 import { UserUtilityNavStyles as styles } from './UserUtilityNav.styles';
 import { dcnb } from 'cnbuilder';
 import Link from 'next/link';
-import { GlobeAltIcon } from '@heroicons/react/solid';
-import { Grid } from '../Grid';
+import { GlobeAltIcon } from '@heroicons/react/outline';
+import { MenuIcon, UserCircleIcon } from '@heroicons/react/solid';
+
 
 interface UserUtilityNavProps {
   className?: string;
@@ -12,12 +13,18 @@ interface UserUtilityNavProps {
 export const UserUtilityNav = ({ className }: UserUtilityNavProps) => {
   return (
     <div className={dcnb(styles.root, className)}>
-      <Grid xs={3} className="place-items-end items-end place-self-end">
-        <Link href="#"><a className="text-sm">Become a host</a></Link>
-        <Link href="#"><a><GlobeAltIcon className="h-6 w-6" /></a></Link>
-        <Link href="#" className=""><a>UTILITY</a></Link>
-      </Grid>
-
-    </div>
+      <div className={dcnb(styles.container)}>
+        <Link href="#"><a className="text-sm whitespace-nowrap tracking-tight rounded-full py-2 px-4 hocus:bg-neutral-100 mr-[-.5em]">Become a Host</a></Link>
+        <Link href="#"><a className="p-3 hocus:bg-neutral-100 rounded-full"><GlobeAltIcon className="h-5 w-5" /></a></Link>
+        <button className="flex items-center border rounded-full pl-2 pr-0.5 py-1">
+          <span>
+            <MenuIcon className="h-5 w-5 text-neutral-500" />
+          </span>
+          <span className="pl-2">
+            <UserCircleIcon className="h-8 w-8 text-neutral-500" />
+          </span>
+        </button>
+      </div>
+    </div >
   )
 }

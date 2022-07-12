@@ -9,16 +9,17 @@ import { LocalFooter } from 'src/components/LocalFooter';
 import { ResultCard } from 'src/components/ResultCard';
 
 export default function Home() {
+
   return (
     <>
-      <header className="mb-8">
-        <Masthead className="" />
-        <MainNav navData={navItems} className="" />
+      <header className="fixed top-0 left-0 z-10 bg-white w-full">
+        <Masthead />
+        <MainNav navData={navItems} />
       </header>
 
-      <main className="px-6">
+      <main className="px-6 mt-56">
         <Container center>
-          <Grid sm={2} md={3} lg={4} xl={5} gap={6}>
+          <Grid sm={2} md={2} lg={4} xl={5} gap={6}>
             <ResultCard />
             <ResultCard />
             <ResultCard />
