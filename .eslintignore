@@ -1,0 +1,3 @@
+# Leave JS alone.
+**/*.js
+cypress
