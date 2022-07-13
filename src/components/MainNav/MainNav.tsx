@@ -45,7 +45,7 @@ export const MainNav = ({ navData, className }: MainNavProps) => {
   });
 
   return (
-    <div className={dcnb(styles.root, className, scrollStyles)}>
+    <div className={dcnb(styles.root, className, scrollStyles)} data-cy="component-mainnav">
       <Container center as="nav" className={dcnb(styles.nav, className)}>
         <ul className={dcnb(styles.list)}>
           {navItems}

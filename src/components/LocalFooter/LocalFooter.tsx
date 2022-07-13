@@ -12,7 +12,7 @@ interface LocalFooterInterface {
 export const LocalFooter = ({ className }: LocalFooterInterface) => {
 
   return (
-    <Container as="nav" center className={dcnb(styles.root, className)}>
+    <Container as="nav" center className={dcnb(styles.root, className)} data-cy="component-localfooter">
       <Grid md={4} gap={8}>
         <ul className={dcnb(styles.ul)}>
           <li><Heading as="h4" className="font-bold">Support</Heading></li>

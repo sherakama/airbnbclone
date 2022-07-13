@@ -12,7 +12,7 @@ interface MastheadProps {
 
 export const Masthead = ({ className }: MastheadProps) => {
   return (
-    <div className={dcnb(styles.root, className)} >
+    <div className={dcnb(styles.root, className)} data-cy="component-masthead">
       <Container center className={dcnb(styles.container)}>
         <Logo className={dcnb(styles.logo)} />
         <ComboSearch className={dcnb(styles.search)} />

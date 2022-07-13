@@ -7,8 +7,11 @@ import navItems from '../data/main-nav.json';
 import { GlobalFooter } from 'src/components/GlobalFooter';
 import { LocalFooter } from 'src/components/LocalFooter';
 import { ResultCard } from 'src/components/ResultCard';
+import { Heading } from 'src/components/Heading';
+import { useAuth } from 'src/hooks/useAuth';
 
 export default function Home() {
+  const { fullName, status } = useAuth();
 
   return (
     <>
@@ -18,6 +21,9 @@ export default function Home() {
       </header>
 
       <main className="px-6 mt-56">
+        {status === 1 &&
+          <Heading className="underline decoration-airbnb-100 my-8">Welcome, {fullName}</Heading>
+        }
         <Container center>
           <Grid sm={2} md={2} lg={4} xl={5} gap={6}>
             <ResultCard />

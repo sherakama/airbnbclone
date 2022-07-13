@@ -9,7 +9,7 @@ interface ComboProps {
 
 export const ComboSearch = ({ className }: ComboProps) => {
   return (
-    <div className={dcnb(styles.root, className)}>
+    <div className={dcnb(styles.root, className)} data-cy="component-combosearch">
       <ul className={dcnb(styles.list)}>
         <li className={dcnb(styles.litem, 'border-l rounded-l-full border-r')}>
           <button className={dcnb(styles.button, 'px-5')}>Anywhere</button>

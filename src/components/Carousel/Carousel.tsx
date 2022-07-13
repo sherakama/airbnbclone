@@ -10,7 +10,7 @@ interface CarouselProps {
 
 export const Carousel = ({ className, images }: CarouselProps) => {
   return (
-    <ul className={dcnb(styles.root, className)}>
+    <ul className={dcnb(styles.root, className)} data-cy="component-carousel">
       {images.map((img, index) => {
         return (
           <li key={img + index} className={dcnb(styles.litem)}>
