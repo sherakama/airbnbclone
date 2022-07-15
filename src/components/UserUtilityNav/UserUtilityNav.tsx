@@ -18,12 +18,9 @@ export const UserUtilityNav = ({ className }: UserUtilityNavProps) => {
 
   const userLoginToggle = () => {
     if (!status) {
-      dispatch(
-        setStatus(1)
-      );
+      dispatch(setStatus(1));
       return;
     }
-
     dispatch(setStatus(0));
   }
 

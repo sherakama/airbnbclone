@@ -21,10 +21,10 @@ export default function Home() {
       </header>
 
       <main className="px-6 mt-56">
-        {status === 1 &&
-          <Heading className="underline decoration-airbnb-100 my-8">Welcome, {fullName}</Heading>
-        }
         <Container center>
+          {status === 1 &&
+            <Heading className="underline decoration-airbnb-100 my-8">Welcome, {fullName}</Heading>
+          }
           <Grid sm={2} md={2} lg={4} xl={5} gap={6}>
             <ResultCard />
             <ResultCard />
@@ -46,7 +46,6 @@ export default function Home() {
             <ResultCard />
             <ResultCard />
           </Grid>
-
         </Container>
       </main>
 
