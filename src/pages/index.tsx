@@ -25,7 +25,7 @@ export default function Home() {
           {status === 1 &&
             <Heading className="underline decoration-airbnb-100 my-8">Welcome, {fullName}</Heading>
           }
-          <Grid sm={2} md={2} lg={4} xl={5} gap={6}>
+          <Grid sm={2} md={2} lg={4} xl={4} xxl={5} gap={6}>
             <ResultCard />
             <ResultCard />
             <ResultCard />

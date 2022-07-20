@@ -21,12 +21,12 @@ export const Controls = ({ className }: ControlsProps) => {
   }
 
   return (
-    <div className={dcnb(styles.root, className)}>
-      <Button onClick={handleLeftClick}>
-        <ChevronLeftIcon className="h-6 w-6" />
+    <div className={dcnb(styles.root, className)} cy-text="component-controls">
+      <Button onClick={handleLeftClick} className={dcnb(styles.btn)}>
+        <ChevronLeftIcon className={dcnb(styles.icon)} />
       </Button>
-      <Button onClick={handleRightClick}>
-        <ChevronRightIcon className="h-6 w-6" />
+      <Button onClick={handleRightClick} className={dcnb(styles.btn)}>
+        <ChevronRightIcon className={dcnb(styles.icon)} />
       </Button>
     </div>
   )

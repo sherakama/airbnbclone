@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { CarouselStyles as styles } from './Carousel.styles';
+import { ImagesStyles as styles } from './Images.styles';
 import { dcnb } from 'cnbuilder';
 import { Image } from '../Image';
 import { CarouselContext } from './Carousel.context';
@@ -10,14 +10,14 @@ interface ImagesProps {
 }
 
 export const Images = ({ className, images }: ImagesProps) => {
-  const { state } = useContext(CarouselContext);
+  const { state: { active } } = useContext(CarouselContext);
 
   return (
-    <ul className={dcnb(styles.ul, className)}>
+    <ul className={dcnb(styles.root, className)} data-cy="component-images">
       {images.map((img, index) => {
         return (
-          <li key={img + index} className={dcnb(styles.litem, { 'invisible': index !== state.active })}>
-            <Image src={img} blurDataURL="https:/picsum.photos/10/10" alt="" className={dcnb(styles.limg)} />
+          <li key={img + index} className={dcnb(styles.litem, index == active ? [styles.highlight] : [styles.neutral])}>
+            <Image src={img} blurDataURL="https:/picsum.photos/10/10" layout="fill" objectFit="cover" alt="" className={dcnb(styles.limg)} />
           </li>
         )
       })}

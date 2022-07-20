@@ -7,7 +7,7 @@ interface ImageProps {
   className?: string;
 }
 
-export const Image = ({ className, placeholder = 'blur', width = 576, height = 576, alt = '', ...rest }: ImageProps & NextImageProps) => {
+export const Image = ({ className, placeholder = 'blur', width, height, alt = '', ...rest }: ImageProps & NextImageProps) => {
 
   const placeLoader = ({ src }: ImageLoaderProps) => {
     return `${src}?cachebust=${Math.floor(Math.random() * 10000000)}`

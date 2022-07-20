@@ -2,7 +2,9 @@ export const PagerStyles: {
   [key: string]: string[]
 } = {
   root: [],
-  ul: [],
+  pul: [],
   pitem: ['inline-block', 'text-lg'],
-  plink: [],
+  plink: ['prose-2xl'],
+  neutral: ['text-neutral-300', 'opacity-50'],
+  highlight: ['bold', 'text-white'],
 }

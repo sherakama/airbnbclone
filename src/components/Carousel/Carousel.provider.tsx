@@ -3,9 +3,11 @@ import { CarouselReducer, CarouselInitialState, CarouselContext } from './Carous
 
 type Props = {
   children: ReactNode;
+  count: number;
 };
 
-export function CarouselProvider({ children }: Props) {
+export function CarouselProvider({ children, count }: Props) {
+  CarouselInitialState.count = count;
   const [state, dispatch] = useReducer(CarouselReducer, CarouselInitialState);
 
   return (
