@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useContext } from 'react';
+import { useContext, MouseEvent } from 'react';
 import { PagerStyles as styles } from './Pager.styles';
 import { dcnb } from 'cnbuilder';
 import { CarouselContext, set } from '../Carousel/Carousel.context';
@@ -12,7 +12,8 @@ interface PagerInterface {
 export const Pager = ({ className, items }: PagerInterface) => {
   const { dispatch, state: { active } } = useContext(CarouselContext);
 
-  const handleClick = (index: number) => {
+  const handleClick = (e: MouseEvent<HTMLElement>, index: number) => {
+    e.preventDefault();
     dispatch(set(index));
   }
 
@@ -22,8 +23,8 @@ export const Pager = ({ className, items }: PagerInterface) => {
         {items.map((itm, index) => {
           return (
             <li key={`pager-${index}`} className={dcnb(styles.pitem)}>
-              <a href="#" onClick={() => {
-                handleClick(index);
+              <a href="#" onClick={(event) => {
+                handleClick(event, index);
               }} className={dcnb(styles.plink, index == active ? styles.highlight : styles.neutral)}>•<span className="sr-only">{index}</span></a>
             </li>
           )

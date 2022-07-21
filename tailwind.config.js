@@ -13,11 +13,27 @@ module.exports = {
           100: '#FF385C',
         },
       },
+      zIndex: {
+        '1': '1',
+        '2': '2',
+        '3': '3',
+        '4': '4',
+        '5': '5',
+        '6': '6',
+        '7': '7',
+        '8': '8',
+        '9': '9',
+        '60': '60',
+        '70': '70',
+        '80': '80',
+        '90': '90',
+        '100': '100',
+      }
     },
   },
   plugins: [
-     // Add our own variants for convenience
-     plugin(({ addVariant }) => {
+    // Add our own variants for convenience
+    plugin(({ addVariant }) => {
       addVariant('hocus', ['&:hover', '&:focus']);
       addVariant('group-hocus', [
         ':merge(.group):focus &',

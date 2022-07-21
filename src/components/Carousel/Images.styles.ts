@@ -16,9 +16,25 @@ export const ImagesStyles: {
     'absolute',
   ],
   active: [
-    '',
+    'left-0',
+    'z-10',
+    'transition-all',
+    'duration-500',
+  ],
+  left: [
+    'z-5',
+    'left-[-100%]',
+    'transition-all',
+    'duration-500',
+  ],
+  right: [
+    'z-5',
+    'left-[100%]',
+    'transition-all',
+    'duration-500',
   ],
   neutral: [
-    'hidden',
+    'z-1',
+    'left-0',
   ],
 }

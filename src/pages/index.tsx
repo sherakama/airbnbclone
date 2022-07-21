@@ -15,7 +15,7 @@ export default function Home() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 z-10 bg-white w-full">
+      <header className="fixed top-0 left-0 z-20 bg-white w-full">
         <Masthead />
         <MainNav navData={navItems} />
       </header>
