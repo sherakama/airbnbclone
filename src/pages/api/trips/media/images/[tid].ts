@@ -1,4 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { md5 } from 'md5';
 
 export default function handler(req: NextApiRequest , res: NextApiResponse) {
 
@@ -18,8 +19,10 @@ export default function handler(req: NextApiRequest , res: NextApiResponse) {
   };
 
   for (let i = 1; i <= num; i++) {
-    images.items.push(`${source}/${height}/${width}`);
+    const seed = md5(`bnbclone-${tid}-${i}`); 
+    images.items.push(`${source}/seed/${seed}/${height}/${width}`);
   }
 
   res.status(200).json(images);
 }
+
