@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { md5 } from 'md5';
+import md5 from 'md5';
 
 export default function handler(req: NextApiRequest , res: NextApiResponse) {
 
