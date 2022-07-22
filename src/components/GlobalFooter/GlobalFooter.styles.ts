@@ -1,6 +1,20 @@
 export const GlobalFooterStyles: {
   [key: string]: string[]
 } = {
-  root: ['mx-auto', 'py-3', 'text-sm', 'bg-slate-100', 'md:flex', 'justify-between'],
-  sticky: ['fixed', 'bottom-0'],
+  root: [
+    'py-3',
+    'text-sm',
+    'md:flex',
+    'justify-between',
+    'fixed',
+    'w-full',
+    'bottom-0',
+    'z-100',
+    'px-6',
+    'lg:px-10',
+    'xl:px-20',
+    'bg-white',
+    'border-t',
+    'border-slate-300',
+  ],
 }

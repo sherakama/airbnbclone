@@ -12,7 +12,12 @@ interface ImagesProps {
 export const Images = ({ className, images }: ImagesProps) => {
   const { state: { active } } = useContext(CarouselContext);
   const count = images.length;
-  const isLeft = () => {
+
+  /**
+   * 
+   * @returns number | undefined
+   */
+  const getLeft = () => {
     // Not enough.
     if (count < 2) {
       return undefined;
@@ -23,7 +28,12 @@ export const Images = ({ className, images }: ImagesProps) => {
     }
     return count - 1;
   };
-  const isRight = () => {
+
+  /**
+   * 
+   * @returns 
+   */
+  const getRight = () => {
     // Not enough.
     if (count < 2) {
       return undefined;
@@ -34,8 +44,14 @@ export const Images = ({ className, images }: ImagesProps) => {
     }
     return 0;
   };
+
+  /**
+   * 
+   * @param index number
+   * @returns boolean
+   */
   const isNeutral = (index: number): boolean => {
-    if (isLeft() || isRight()) {
+    if (getLeft() || getRight()) {
       return false;
     }
     if (active === index) {
@@ -51,14 +67,10 @@ export const Images = ({ className, images }: ImagesProps) => {
         const twstyles = dcnb(
           styles.litem,
           index === active ? [styles.active] : '',
-          index === isLeft() ? styles.left : '',
-          index === isRight() ? styles.right : '',
+          index === getLeft() ? styles.left : '',
+          index === getRight() ? styles.right : '',
           isNeutral(index) ? styles.neutral : ''
         );
-
-        console.log('THE IMAGE: ', img);
-        console.log('THE INDEX: ', index);
-
 
         return (
           <li key={img + index} className={twstyles}>

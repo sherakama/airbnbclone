@@ -10,7 +10,7 @@ export interface ContainerProps {
   center?: boolean;
 }
 
-export const Container = ({ as = 'div', children, className, center, ...props }: ContainerProps & HTMLAttributes<Element>) => {
+export const Container = ({ as = 'div', children, className, center = false, ...props }: ContainerProps & HTMLAttributes<Element>) => {
   const styles = ['container'];
   if (center) { styles.push('mx-auto') }
   return React.createElement(as, { className: dcnb(styles, className), ...props }, children);

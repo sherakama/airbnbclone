@@ -4,6 +4,7 @@ import { ResultCardStyles as styles } from './ResultCard.styles';
 import { dcnb } from 'cnbuilder';
 import { Heading } from '../Heading';
 import { Carousel } from '../Carousel';
+import { IHeart } from '../IHeart';
 import { useCallback, useEffect, useState } from 'react';
 import { PulseLoader } from 'react-spinners';
 import Skeleton from 'react-loading-skeleton'
@@ -11,9 +12,10 @@ import 'react-loading-skeleton/dist/skeleton.css'
 
 interface ResultCardInterface {
   className?: string;
+  tid: number;
 }
 
-export const ResultCard = ({ className }: ResultCardInterface) => {
+export const ResultCard = ({ className, tid }: ResultCardInterface) => {
 
   const [data, setData] = useState(null);
   const [isLoading, setLoading] = useState(true);
@@ -46,9 +48,9 @@ export const ResultCard = ({ className }: ResultCardInterface) => {
   }
 
   return (
-    <Container as="div" center className={dcnb(styles.root, className)}>
+    <Container as="div" center className={dcnb(styles.root, className)} data-cy="component-result-card">
       <Carousel images={data} />
-      <button>♡</button>
+      <IHeart className="absolute w-7 h-7 top-3 right-3 z-10 text-3xl text-white opacity-75" tid={tid} />
       <Link href={''}>
         <a>
           <Heading as="h2">City, State, Country <span>4.79 ⭐</span></Heading>
