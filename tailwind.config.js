@@ -28,6 +28,15 @@ module.exports = {
         '80': '80',
         '90': '90',
         '100': '100',
+      },
+      fontFamily: {
+        'jakarta': ['PlusJakartaSans', 'sans-serif'],
+        'jakarta-bold': ['PlusJakartaSansBold', 'sans-serif'],
+        'jakarta-xbold': ['PlusJakartaSansExtraBold', 'sans-serif'],
+        'jakarta-sbold': ['PlusJakartaSansSemiBold', 'sans-serif'],
+        'jakarta-light': ['PlusJakartaSansLight', 'sans-serif'],
+        'jakarta-xlight': ['PlusJakartaSansExtraLight', 'sans-serif'],
+        'jakarta-medium': ['PlusJakartaSansMedium', 'sans-serif'],
       }
     },
   },
